@@ -6,7 +6,7 @@ import { WeatherPage } from './weather.page';
 const routes: Routes = [
   {
     path: '',
-    component: WeatherPage
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   }
 ];
 
