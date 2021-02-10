@@ -1,4 +1,3 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -16,6 +15,59 @@
   </ion-header>
 
   <div id="container">
-      <div id="mapId" style="height:300px"></div>
+
+    <div id="mapId" style="height:40vh">
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="locatePosition()">
+          <ion-icon name="locate"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Search</ion-label>
+      <ion-input placeholder="please enter a city name..."></ion-input>
+    </ion-item>
+
+
+
+
+
+
+    <ion-tabs> 
+      <ion-tab-bar slot="bottom">
+       
+        <ion-tab-button tab="cityInfo">
+          <ion-icon name="business"></ion-icon>
+          <ion-label>City info</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="weather">
+          <ion-icon name="sunny"></ion-icon>
+          <ion-label>Weather</ion-label>
+        </ion-tab-button>
+
+    
+        <ion-tab-button tab="airquality">
+          <ion-icon name="flower"></ion-icon>
+          <ion-label>Air quality</ion-label>
+        </ion-tab-button>
+    
+
+      </ion-tab-bar>
+    </ion-tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 </ion-content>
