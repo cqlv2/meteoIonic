@@ -31,7 +31,6 @@ export class MapComponent implements OnInit {
       .addTo(this.map);
   }
 
-
   locatePosition() {
     this.map.locate({ setView: true }).on("locationfound", (e: any) => {
       this.newMarker = marker([e.latitude, e.longitude], {
@@ -44,6 +43,10 @@ export class MapComponent implements OnInit {
         const position = this.newMarker.getLatLng();
       });
     });
+  }
+
+  moveToCity(lat: number, lon: number) {
+    this.map.setView([lat, lon], 12)
   }
 
 
