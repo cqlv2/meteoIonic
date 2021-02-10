@@ -34,19 +34,19 @@ export class MapComponent implements OnInit {
       .addTo(this.map);
   }
 
-
-
-
-
-
   locatePosition() {
+  
+
     this.geoL.getCurrentPosition().then(coordonee => {
-      this.newMarker = marker([coordonee.coords.latitude, coordonee.coords.longitude],
-        {
-          draggable:
-            false
-        }).addTo(this.map);
-      this.newMarker.bindPopup("You are located here!").openPopup();
+
+      if (!!this.newMarker){
+        this.newMarker.setLatLng([coordonee.coords.latitude, coordonee.coords.longitude]).update();
+      }
+      else {
+        this.newMarker = marker([coordonee.coords.latitude, coordonee.coords.longitude])
+          .addTo(this.map);
+        this.newMarker.bindPopup("You are located here!").openPopup();
+      }
 
       this.moveToCity(coordonee.coords.latitude, coordonee.coords.longitude)
 
