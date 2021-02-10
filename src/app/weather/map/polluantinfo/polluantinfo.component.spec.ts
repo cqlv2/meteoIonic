@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MapDetailPage } from './map-detail.page';
+import { PolluantinfoComponent } from './polluantinfo.component';
 
-describe('MapDetailPage', () => {
-  let component: MapDetailPage;
-  let fixture: ComponentFixture<MapDetailPage>;
+describe('PolluantinfoComponent', () => {
+  let component: PolluantinfoComponent;
+  let fixture: ComponentFixture<PolluantinfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapDetailPage ],
+      declarations: [ PolluantinfoComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MapDetailPage);
+    fixture = TestBed.createComponent(PolluantinfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

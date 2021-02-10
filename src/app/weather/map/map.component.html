@@ -31,31 +31,25 @@
 
 
 
+    <ion-segment (ionChange)="segmentChanged($event)">
 
-    <ion-tabs> 
-      <ion-tab-bar slot="bottom">
-       
-        <ion-tab-button tab="cityInfo">
-          <ion-icon name="business"></ion-icon>
-          <ion-label>City info</ion-label>
-        </ion-tab-button>
+      <ion-segment-button value="cityinfo">
+        <ion-label>information</ion-label>
+      </ion-segment-button>
+      
+      <ion-segment-button value="weather">
+        <ion-label>Weather</ion-label>
+      </ion-segment-button>
 
-        <ion-tab-button tab="weather">
-          <ion-icon name="sunny"></ion-icon>
-          <ion-label>Weather</ion-label>
-        </ion-tab-button>
+      <ion-segment-button value="polluant">
+        <ion-label>polluant</ion-label>
+      </ion-segment-button>
 
-    
-        <ion-tab-button tab="airquality">
-          <ion-icon name="flower"></ion-icon>
-          <ion-label>Air quality</ion-label>
-        </ion-tab-button>
-    
+    </ion-segment>
 
-      </ion-tab-bar>
-    </ion-tabs>
-
-
+    <app-cityinfo *ngIf="tabSelect === 'cityinfo'"></app-cityinfo>
+    <app-weatherinfo *ngIf="tabSelect === 'weather'"></app-weatherinfo>
+    <app-polluantinfo *ngIf="tabSelect === 'polluant'"></app-polluantinfo>
 
 
 

@@ -8,6 +8,7 @@ import { WeatherPageRoutingModule } from './weather-routing.module';
 
 import { WeatherPage } from './weather.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,9 @@ import { WeatherPage } from './weather.page';
     IonicModule,
     WeatherPageRoutingModule
   ],
-  declarations: [WeatherPage]
+  declarations: [
+    WeatherPage,
+
+  ]
 })
-export class WeatherPageModule {}
+export class WeatherPageModule { }

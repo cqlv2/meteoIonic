@@ -15,11 +15,21 @@ export class MapComponent implements OnInit {
   newMarker: any;
   address: string[];
 
+  tabSelect:string = "cityinfo";
+
   constructor(private geoL: Geolocation, private router: Router) { }
 
 
 
   ngOnInit() { }
+
+  segmentChanged(e){
+    this.tabSelect= e.detail.value;
+    console.log(this.tabSelect);
+    
+  }
+
+
 
   // The below function is added
   ionViewDidEnter() {
