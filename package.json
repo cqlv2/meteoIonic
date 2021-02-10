@@ -25,6 +25,7 @@
     "@types/leaflet": "^1.5.21",
     "cordova-android": "9.0.0",
     "leaflet": "^1.7.1",
+    "leaflet.markercluster": "^1.4.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

@@ -4,7 +4,7 @@ import { Map, tileLayer, marker } from 'leaflet';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { CityService } from '../core/services/city.service';
 import { City } from '../core/models/city.model';
-import * as L from 'leaflet';
+import * as L from 'leaflet.markercluster';
 
 @Component({
   selector: 'app-map',
@@ -50,14 +50,18 @@ export class MapComponent implements OnInit {
       .addTo(this.map);
     this.cityService.getCities().subscribe(data => {
       this.cities = data;
-      data.forEach(city => {
-        let markerCity = marker([city.latitude, city.longitude])
-        .addTo(this.map);
-    }, err => console.log(err)   
-    );
 
-    
-    });
+      var markersCluster = new L.MarkerClusterGroup();
+
+      data.forEach(city => {
+        // var latLng = new L.LatLng(city.latitude, city.longitude);
+        // var marker = new L.Marker(latLng, { title: city.cityName });
+        let point = marker([city.latitude, city.longitude]);
+        point.addEventListener('click', () => this.cityService.sendToCitySubject(city));
+        markersCluster.addLayer(point);
+      });
+        markersCluster.addTo(this.map);
+    }, err => console.log(err));
 
 
   }
